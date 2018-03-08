@@ -3,7 +3,7 @@ import os
 from detect_picture_utils import log
 import cv2
 import dlib
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from imutils.face_utils import FaceAligner
@@ -27,6 +27,8 @@ class GenderRecognizer:
         cuda=True
         font_scale=1
         thickness=1
+        #log('1')
+        print('1')
         with tf.Graph().as_default():
             config = tf.ConfigProto()
             config.gpu_options.per_process_gpu_memory_fraction = 0.4
@@ -55,6 +57,7 @@ class GenderRecognizer:
                 pass
     
     def recognize(self, aligned_image, image, rect_nums, XY):
+        print('2')
         ages, genders = self.eval(aligned_image, self.model_path)
         age = int(ages[0])
         if age < 39 :
