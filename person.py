@@ -22,7 +22,7 @@ class UnknownPerson(Singleton):
     name = 'unknown_person'
     encoding = None
     in_the_frame = False
-    i_am_recognized = TimeAverage(2)
+    i_am_recognized = TimeAverage(20)
 
     def set_state(self, state):
         self.i_am_recognized.update(int(state))
@@ -52,7 +52,7 @@ class Person:
     checked_at = None
 
     def __init__(self):
-        self.i_am_recognized = TimeAverage(2)
+        self.i_am_recognized = TimeAverage(20)
 
     @classmethod
     def fromfile(cls, filename):
