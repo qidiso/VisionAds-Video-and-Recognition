@@ -22,7 +22,8 @@ class UnknownPerson(Singleton):
     name = 'unknown_person'
     encoding = None
     in_the_frame = False
-    i_am_recognized = TimeAverage(20)
+# tempo alterado de 20 para 2
+    i_am_recognized = TimeAverage(2)
 
     def set_state(self, state):
         self.i_am_recognized.update(int(state))

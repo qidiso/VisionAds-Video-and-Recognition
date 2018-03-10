@@ -18,16 +18,16 @@ ADVERTISE_PATHS = "images/{}".format("unknow")
 class Welcome:
     def __init__(self):
         self.font = cv2.freetype.createFreeType2()
-        self.font.loadFontData(fontFileName='fonts/Niveau Grotesk Light.otf', id=0)
+        self.font.loadFontData(fontFileName='fonts/MarkerFelt.ttc', id=0)
 
     def render(self, frame, name,gender,age):
         h,w,_ = frame.shape
         font_size = 50
         half_font_size = font_size / 2
         if gender == "male":
-            message = "Seja bem vindo à Brasil Brokers, {}! Esperamos que você tenha uma experiência 'Unique'".format(name)
+            message = "Seja bem vindo à Brasil Brokers, {}!".format(name)
         else :
-            message = "Seja bem vinda à Brasil Brokers, {}! Esperamos que você tenha uma experiência 'Unique'".format(name)
+            message = "Seja bem vinda à Brasil Brokers, {}!".format(name)
         
         x_pos = int(w/2-half_font_size*0.8*(len(message)/2))
         y_pos = int(h/2-half_font_size)

@@ -1,11 +1,10 @@
 #!/usr/bin/env python
-import webbrowser
+
 import cv2
 
 import numpy as np
 
 from detect_picture_utils import Listener
-
 
 
 def disable_vsync():
@@ -37,6 +36,7 @@ class RenderLoop(Listener):
     def run(self):
         cv2.namedWindow('Video', cv2.WND_PROP_FULLSCREEN)
         disable_vsync()
+# a linha imediatamente abaixo desse comentario estava comentada originalmente
         cv2.setWindowProperty('Video', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
         frame = None
   
