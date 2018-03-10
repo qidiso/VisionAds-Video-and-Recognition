@@ -60,10 +60,11 @@ class GenderRecognizer:
         print('2')
         ages, genders = self.eval(aligned_image, self.model_path)
         age = int(ages[0])
+#esses valores estavam alterados original
         if age < 39 :
-            age = "adult"
+            age = "teen"
         elif age >= 40 and age < 49:
-            age = "senior"
+            age = "adult"
         elif age >= 50:
             age = "mature" 
 
