@@ -22,7 +22,7 @@ class VideoFeed(Process, Broadcaster):
     def run(self):
         log('Live streaming...')
         # video_capture = VideoStream(src="rtsp://admin:admin@cyberlabsrio.ddns.net/cam/realmonitor?channel=5&subtype=0", usePiCamera=False).start(
-        gst_str = ("v4l2src device=/dev/video{} ! " "video/x-raw, width=(int){}, height=(int){}, format=(string)RGB ! " "videoconvert ! appsink").format(1, 1920, 1080)
+        gst_str = ("v4l2src device=/dev/video{} ! " "video/x-raw, width=(int){}, height=(int){}, format=(string)RGB ! " "videoconvert ! appsink").format(1, 640, 480)
         print(gst_str)
    
         video_capture = VideoStream(src=gst_str, usePiCamera=False).start()
